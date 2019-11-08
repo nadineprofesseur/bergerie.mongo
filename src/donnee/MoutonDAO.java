@@ -12,9 +12,10 @@ import com.mongodb.MongoClient;
 import modele.Mouton;
 
 public class MoutonDAO {
-	MongoClient mongo;
-	DB basededonnees;
-	DBCollection listeMoutons;
+	protected MongoClient mongo;
+	protected DB basededonnees;
+	protected DBCollection listeMoutons;
+	
 	public MoutonDAO()
 	{
 		mongo = new MongoClient();		
@@ -23,9 +24,7 @@ public class MoutonDAO {
 	}
 	
 	public void ajouterMouton(Mouton mouton)
-	{
-		
-				
+	{			
 		DBObject moutonMongo = new BasicDBObject();
 		moutonMongo.putAll(mouton.exporterHashmap());
 		listeMoutons.insert(moutonMongo);
