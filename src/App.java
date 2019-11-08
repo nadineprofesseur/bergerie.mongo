@@ -22,11 +22,11 @@ public class App {
 		
 		// Test pour ajouter
 		
-		Mouton mouton2 = new Mouton();
-		mouton2.setNom("Toutou");
-		mouton2.setCouleur("Bleu");
-		//moutonDAO.ajouterMouton(mouton); 
-		 
+		/*Mouton mouton = new Mouton();
+		mouton.setNom("Toutou");
+		mouton.setCouleur("Bleu");
+		moutonDAO.ajouterMouton(mouton); 
+		*/ 
 		
 		// Test pour liste des moutons
 		List<Mouton> moutons = moutonDAO.listerMoutons();

@@ -2,9 +2,11 @@ package donnee;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import com.mongodb.BasicDBObject;
 import com.mongodb.DBCollection;
+import com.mongodb.DBCursor;
 import com.mongodb.DBObject;
 
 import modele.Mouton;
@@ -26,11 +28,15 @@ public class MoutonDAO {
 	
 	public List<Mouton> listerMoutons()
 	{
-		List<Mouton> listeMoutons = new ArrayList<Mouton>();
+		List<Mouton> moutons = new ArrayList<Mouton>();
 		
-		
-		
-		return listeMoutons;
+		DBCursor pointeurMouton = listeMoutons.find();
+		Map valeursMouton = pointeurMouton.one().toMap();
+		Mouton mouton = new Mouton();
+		mouton.setNom((String)valeursMouton.get("nom"));
+		mouton.setCouleur((String)valeursMouton.get("couleur"));
+		moutons.add(mouton);
+		return moutons;
 	}
 
 }
