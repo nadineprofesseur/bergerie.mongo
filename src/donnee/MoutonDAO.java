@@ -29,10 +29,16 @@ public class MoutonDAO {
 	public List<Mouton> listerMoutons()
 	{
 		List<Mouton> moutons = new ArrayList<Mouton>();
+		Map moutonMap = null;
+		Mouton mouton = null;
 		
 		DBCursor pointeurMouton = listeMoutons.find();
-		Mouton mouton = new Mouton(pointeurMouton.one().toMap());
-		moutons.add(mouton);
+		while(pointeurMouton.hasNext())
+		{
+			moutonMap = pointeurMouton.next().toMap();
+			mouton = new Mouton(moutonMap);
+			moutons.add(mouton);		
+		}
 		return moutons;
 	}
 
