@@ -13,6 +13,20 @@ public class App {
 		
 		System.out.println("Allo Mongo");
 		MongoClient mongo = new MongoClient();
+		
+		DB basededonnees = mongo.getDB("bergerie");
+		
+		DBCollection listeMoutons = basededonnees.getCollection("mouton");
+		
+		DBObject mouton = new BasicDBObject();
+		Map valeursMouton = new HashMap();
+		valeursMouton.put("nom","Lion");
+		valeursMouton.put("couleur","verte");
+		mouton.putAll(valeursMouton);
+		
+		listeMoutons.insert(mouton);
+		
+		mongo.close();
 
 	}
 

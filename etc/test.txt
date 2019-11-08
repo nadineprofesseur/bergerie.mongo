@@ -1,0 +1,9 @@
+mongo
+
+> use bergerie
+switched to db bergerie
+> show collections
+mouton
+> db.mouton.find()
+{ "_id" : ObjectId("5dc582aeef696412c86d01f5"), "couleur" : "verte", "nom" : "Dolly" }
+{ "_id" : ObjectId("5dc58390ef696405a4af85a3"), "couleur" : "verte", "nom" : "Lion" }
