@@ -7,26 +7,18 @@ import com.mongodb.DBCollection;
 import com.mongodb.DBObject;
 import com.mongodb.MongoClient;
 
+import donnee.MoutonDAO;
+
 public class App {
 
 	public static void main(String[] args) {
 		
 		System.out.println("Allo Mongo");
-		MongoClient mongo = new MongoClient();		
-		DB basededonnees = mongo.getDB("bergerie");
-				
-		Map valeursMouton = new HashMap();
-		valeursMouton.put("nom","Lion");
-		valeursMouton.put("couleur","verte");
-		
-		DBObject mouton = new BasicDBObject();
-		mouton.putAll(valeursMouton);
-		
-		DBCollection listeMoutons = basededonnees.getCollection("mouton");
-		listeMoutons.insert(mouton);
-		
-		mongo.close();
+		MoutonDAO moutonDAO = new MoutonDAO();
+		moutonDAO.ajouterMouton(); // test pret
 
+		
+		moutonDAO.finalize(); // TODO trouver la solution pour que cela s'appelle tout seul
 	}
 
 }
