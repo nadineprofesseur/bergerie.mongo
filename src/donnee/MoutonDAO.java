@@ -24,8 +24,8 @@ public class MoutonDAO {
 		DB basededonnees = mongo.getDB("bergerie");
 				
 		Map valeursMouton = new HashMap();
-		valeursMouton.put("nom","Lion");
-		valeursMouton.put("couleur","verte");
+		valeursMouton.put("nom",mouton.getNom());
+		valeursMouton.put("couleur",mouton.getCouleur());
 		
 		DBObject moutonMongo = new BasicDBObject();
 		moutonMongo.putAll(valeursMouton);
