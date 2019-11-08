@@ -31,11 +31,7 @@ public class MoutonDAO {
 		List<Mouton> moutons = new ArrayList<Mouton>();
 		
 		DBCursor pointeurMouton = listeMoutons.find();
-		Map valeursMouton = pointeurMouton.one().toMap();
-		Mouton mouton = new Mouton((String)valeursMouton.get("nom"), (String)valeursMouton.get("couleur"));
-		//Mouton mouton = new Mouton();
-		//mouton.setNom((String)valeursMouton.get("nom"));
-		//mouton.setCouleur((String)valeursMouton.get("couleur"));
+		Mouton mouton = new Mouton(pointeurMouton.one().toMap());
 		moutons.add(mouton);
 		return moutons;
 	}

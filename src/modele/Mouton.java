@@ -18,6 +18,12 @@ public class Mouton {
 		this.couleur = couleur;
 	}
 	
+	public Mouton(Map valeursMouton)
+	{
+		this.setNom((String)valeursMouton.get("nom"));
+		this.setCouleur((String)valeursMouton.get("couleur"));
+	}
+	
 	public String getNom() {
 		return nom;
 	}
