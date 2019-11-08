@@ -8,6 +8,7 @@ import com.mongodb.DBObject;
 import com.mongodb.MongoClient;
 
 import donnee.MoutonDAO;
+import modele.Mouton;
 
 public class App {
 
@@ -15,7 +16,13 @@ public class App {
 		
 		System.out.println("Allo Mongo");
 		MoutonDAO moutonDAO = new MoutonDAO();
-		moutonDAO.ajouterMouton(); // test pret
+		
+		
+		Mouton mouton = new Mouton();
+		mouton.setNom("Lalo");
+		mouton.setCouleur("Bleu");
+		
+		moutonDAO.ajouterMouton(mouton); 
 
 		
 		moutonDAO.finalize(); // TODO trouver la solution pour que cela s'appelle tout seul

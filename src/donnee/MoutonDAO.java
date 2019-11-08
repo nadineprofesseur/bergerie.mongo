@@ -9,6 +9,8 @@ import com.mongodb.DBCollection;
 import com.mongodb.DBObject;
 import com.mongodb.MongoClient;
 
+import modele.Mouton;
+
 public class MoutonDAO {
 	MongoClient mongo;
 	public MoutonDAO()
@@ -16,7 +18,7 @@ public class MoutonDAO {
 		mongo = new MongoClient();		
 	}
 	
-	public void ajouterMouton()
+	public void ajouterMouton(Mouton moutonRecu)
 	{
 		
 		DB basededonnees = mongo.getDB("bergerie");
