@@ -41,5 +41,16 @@ public class MoutonDAO {
 		}
 		return moutons;
 	}
+	
+	public void effacerMouton()
+	{
+		
+	}
 
+	public void effacerMoutonSelonNom(String nom)
+	{
+		
+	}
+	
+	
 }

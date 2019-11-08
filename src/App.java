@@ -22,12 +22,15 @@ public class App {
 		
 		// Test pour ajouter
 		
-		/*Mouton mouton = new Mouton();
+		/*
+		// Test pour ajouter un mouton
+		Mouton mouton = new Mouton();
 		mouton.setNom("Toutou");
 		mouton.setCouleur("Bleu");
 		moutonDAO.ajouterMouton(mouton); 
 		*/ 
 		
+		/*
 		// Test pour liste des moutons
 		List<Mouton> moutons = moutonDAO.listerMoutons();
 		Mouton mouton = null;
@@ -36,7 +39,9 @@ public class App {
 			mouton = visiteur.next();
 			System.out.println(mouton.getNom() + " - " + mouton.getCouleur());
 		}
+		*/
 		
+		moutonDAO.effacerMoutonSelonNom("Lion");
 		BaseDeDonnees.getInstance().finalize(); // TODO trouver la solution pour que cela s'appelle tout seul
 	}
 
