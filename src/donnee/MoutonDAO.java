@@ -18,7 +18,7 @@ public class MoutonDAO {
 		mongo = new MongoClient();		
 	}
 	
-	public void ajouterMouton(Mouton moutonRecu)
+	public void ajouterMouton(Mouton mouton)
 	{
 		
 		DB basededonnees = mongo.getDB("bergerie");
@@ -27,12 +27,11 @@ public class MoutonDAO {
 		valeursMouton.put("nom","Lion");
 		valeursMouton.put("couleur","verte");
 		
-		DBObject mouton = new BasicDBObject();
-		mouton.putAll(valeursMouton);
+		DBObject moutonMongo = new BasicDBObject();
+		moutonMongo.putAll(valeursMouton);
 		
 		DBCollection listeMoutons = basededonnees.getCollection("mouton");
-		listeMoutons.insert(mouton);
-	
+		listeMoutons.insert(moutonMongo);
 	}
 	
 	@Override
