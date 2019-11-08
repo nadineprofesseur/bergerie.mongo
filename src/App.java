@@ -7,6 +7,7 @@ import com.mongodb.DBCollection;
 import com.mongodb.DBObject;
 import com.mongodb.MongoClient;
 
+import donnee.BaseDeDonnees;
 import donnee.MoutonDAO;
 import modele.Mouton;
 
@@ -19,13 +20,13 @@ public class App {
 		
 		
 		Mouton mouton = new Mouton();
-		mouton.setNom("Toto");
+		mouton.setNom("Toutou");
 		mouton.setCouleur("Bleu");
 		
 		moutonDAO.ajouterMouton(mouton); 
 
 		
-		moutonDAO.finalize(); // TODO trouver la solution pour que cela s'appelle tout seul
+		BaseDeDonnees.getInstance().finalize(); // TODO trouver la solution pour que cela s'appelle tout seul
 	}
 
 }
