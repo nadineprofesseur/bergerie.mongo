@@ -1,5 +1,8 @@
 package donnee;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.mongodb.BasicDBObject;
 import com.mongodb.DBCollection;
 import com.mongodb.DBObject;
@@ -19,6 +22,15 @@ public class MoutonDAO {
 		DBObject moutonMongo = new BasicDBObject();
 		moutonMongo.putAll(mouton.exporterHashmap());
 		listeMoutons.insert(moutonMongo);
+	}
+	
+	public List<Mouton> listerMoutons()
+	{
+		List<Mouton> listeMoutons = new ArrayList<Mouton>();
+		
+		
+		
+		return listeMoutons;
 	}
 
 }
