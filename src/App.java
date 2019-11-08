@@ -21,19 +21,19 @@ public class App {
 		MoutonDAO moutonDAO = new MoutonDAO();
 		
 		// Test pour ajouter
-		/*
-		Mouton mouton = new Mouton();
-		mouton.setNom("Toutou");
-		mouton.setCouleur("Bleu");
-		moutonDAO.ajouterMouton(mouton); 
-		 */
+		
+		Mouton mouton2 = new Mouton();
+		mouton2.setNom("Toutou");
+		mouton2.setCouleur("Bleu");
+		//moutonDAO.ajouterMouton(mouton); 
+		 
 		
 		// Test pour liste des moutons
-		Mouton mouton = null;
 		List<Mouton> moutons = moutonDAO.listerMoutons();
-		for(Iterator<Mouton> visiteur = moutons.iterator();
-				visiteur.hasNext(); mouton = visiteur.next())
+		Mouton mouton = null;
+		for(Iterator<Mouton> visiteur = moutons.iterator();visiteur.hasNext(); )
 		{
+			mouton = visiteur.next();
 			System.out.println(mouton.getNom() + " - " + mouton.getCouleur());
 		}
 		
