@@ -19,7 +19,7 @@ public class App {
 		
 		
 		Mouton mouton = new Mouton();
-		mouton.setNom("Lalo");
+		mouton.setNom("Toto");
 		mouton.setCouleur("Bleu");
 		
 		moutonDAO.ajouterMouton(mouton); 

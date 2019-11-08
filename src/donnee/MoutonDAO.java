@@ -13,24 +13,21 @@ import modele.Mouton;
 
 public class MoutonDAO {
 	MongoClient mongo;
+	DB basededonnees;
+	DBCollection listeMoutons;
 	public MoutonDAO()
 	{
 		mongo = new MongoClient();		
+		basededonnees = mongo.getDB("bergerie");
+		listeMoutons = basededonnees.getCollection("mouton");
 	}
 	
 	public void ajouterMouton(Mouton mouton)
 	{
 		
-		DB basededonnees = mongo.getDB("bergerie");
 				
-		Map valeursMouton = new HashMap();
-		valeursMouton.put("nom",mouton.getNom());
-		valeursMouton.put("couleur",mouton.getCouleur());
-		
 		DBObject moutonMongo = new BasicDBObject();
-		moutonMongo.putAll(valeursMouton);
-		
-		DBCollection listeMoutons = basededonnees.getCollection("mouton");
+		moutonMongo.putAll(mouton.exporterHashmap());
 		listeMoutons.insert(moutonMongo);
 	}
 	

@@ -1,5 +1,8 @@
 package modele;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class Mouton {
 	
 	protected String nom;
@@ -18,6 +21,12 @@ public class Mouton {
 		this.couleur = couleur;
 	}
 	
+	public Map exporterHashmap()
+	{
+		Map valeursMouton = new HashMap();
+		valeursMouton.put("nom",this.getNom());
+		valeursMouton.put("couleur",this.getCouleur());
+		return valeursMouton;
+	}
 	
-
 }
