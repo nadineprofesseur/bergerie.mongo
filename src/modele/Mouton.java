@@ -7,6 +7,16 @@ public class Mouton {
 	
 	protected String nom;
 	protected String couleur;
+
+	public Mouton()
+	{
+	}
+
+	public Mouton(String nom, String couleur)
+	{
+		this.nom = nom;
+		this.couleur = couleur;
+	}
 	
 	public String getNom() {
 		return nom;
