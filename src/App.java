@@ -41,7 +41,12 @@ public class App {
 		}
 		*/
 		
-		moutonDAO.effacerMoutonSelonNom("Lion");
+		// Test pour effacer des moutons
+		//moutonDAO.effacerMoutonSelonNom("Lion");
+		
+		// Test pour trouver un mouton
+		Mouton moutonTrouve = moutonDAO.trouverMoutonSelonNom("Toutou");
+		
 		BaseDeDonnees.getInstance().finalize(); // TODO trouver la solution pour que cela s'appelle tout seul
 	}
 
