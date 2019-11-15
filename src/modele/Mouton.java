@@ -7,6 +7,7 @@ public class Mouton {
 	
 	protected String nom;
 	protected String couleur;
+	protected String id;
 
 	public Mouton()
 	{
@@ -20,8 +21,12 @@ public class Mouton {
 	
 	public Mouton(Map valeursMouton)
 	{
+		//System.out.println(moutonMap.toString());
+		//System.out.println(moutonMap.get("_id"));
+
 		this.setNom((String)valeursMouton.get("nom"));
 		this.setCouleur((String)valeursMouton.get("couleur"));
+		this.id = (String)valeursMouton.get("_id");
 	}
 	
 	public String getNom() {
