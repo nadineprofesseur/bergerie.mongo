@@ -55,7 +55,7 @@ public class MoutonDAO {
 	
 	public Mouton trouverMoutonSelonNom(String nom)
 	{
-		
+		return null;
 	}
 	
 }
