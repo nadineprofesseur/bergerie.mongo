@@ -46,6 +46,7 @@ public class App {
 		
 		// Test pour trouver un mouton
 		Mouton moutonTrouve = moutonDAO.trouverMoutonSelonNom("Toutou");
+		System.out.println("Le mouton trouve est " + moutonTrouve.getNom() + " " + moutonTrouve.getCouleur());
 		
 		BaseDeDonnees.getInstance().finalize(); // TODO trouver la solution pour que cela s'appelle tout seul
 	}

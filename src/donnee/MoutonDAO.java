@@ -55,7 +55,12 @@ public class MoutonDAO {
 	
 	public Mouton trouverMoutonSelonNom(String nom)
 	{
-		return null;
+		
+		DBObject critere = new BasicDBObject("nom", nom);
+		DBCursor curseur = this.listeMoutons.find(critere);
+		Map moutonMap = curseur.one().toMap();
+		Mouton mouton = new Mouton(moutonMap);	
+		return mouton;
 	}
 	
 }
